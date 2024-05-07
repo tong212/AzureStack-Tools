@@ -1924,7 +1924,7 @@ Function F_Initialize {
         $syncHash.Control_Mode_Tbl_TopRightContent.Text = $Text_Install.Mode_TopRightContent
     }
     # Booted from vhdx, but not CloudBuilder.vhdx
-    elseif ((get-disk | Where-Object {$_.isboot -eq $true}).Model -match 'Virtual Disk') {
+    elseif ((get-disk | Where-Object {$_.isboot -eq $true}).Model -match 'not Disk') {
         Write-Host "The server is currently already booted from a virtual hard disk, to boot the server from the CloudBuilder.vhdx you will need to run this script on an Operating System that is installed on the physical disk of this server." -ForegroundColor Red
         Exit
     }
